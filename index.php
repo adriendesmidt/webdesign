@@ -2,7 +2,7 @@
 
 	<head>
 
-		<title> Salut </title>
+		<title> Salut toi </title>
 
 			<body>
 
