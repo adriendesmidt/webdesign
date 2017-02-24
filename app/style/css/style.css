@@ -1,14 +1,32 @@
 body {
-  padding-top: 100px;
+  	background-color:white;
+	background-image:url(images/arriere_plan_café.jpg);
 }
-[class*="container"], footer {
-  background-color: lightgreen;
+[class*="col-"], footer {
+  
   border: 2px solid black;
   border-radius: 6px;
   line-height: 40px;
   text-align: center;
 }
 
-head{
-	background-color: lightblue;
+.container{
+	padding-top: 100px;
+}
+
+.Donnees{
+	background-color: lightgreen;
+
+}
+
+.header{
+	background-color: lightgrey;
+}
+
+.menu{
+	background-color: white;
+}
+
+.Entete{
+	background-color: white;
 }
