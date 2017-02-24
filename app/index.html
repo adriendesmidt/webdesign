@@ -29,7 +29,25 @@
 			<div class="col-lg-10 Donnees">Donnees
 
 				<div class="row">
-					<div class="col-lg-4 Donnees">4 colonnes nujezhfciuhbjsidnjcknjhfuhdusichbuidhuif hdhiufhsuidhuhfuihfuidhfuhsuihgsu ihfdhiuf huidshuih fuhdsuhsdfo</div>
+					<div class="col-lg-4 Donnees">
+						<label>Coche moi: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
+
+								<div ng-if="checked" >
+									<div ng-controller="controleDonnees" >
+								
+											<div ng-repeat="donnee in donnees">
+											
+												<p>
+												
+												{{donnee.username}}
+												
+												</p>
+																									
+											</div>
+									</div>	
+									
+								</div>
+					</div>
 					<div class="col-lg-7 col-lg-offset-1 Donnees">7 colonnes</div>
 				</div>
 			</div>
