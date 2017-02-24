@@ -7,7 +7,7 @@
 
 <title> Salut toi  ca va ?</title>
 
-<body>
+<body ng-app="MyModule">
 <div class="header">
 <div class="row"> 
 <div class="col-lg-12"> Café à 1€</div>
@@ -30,6 +30,28 @@
 		</div>
 	</div>
 
+	<label>Coche moi: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
+
+			<div ng-if="checked" >
+				<div ng-controller="controleDonnees" >
+			
+						<div ng-repeat="donnee in donnees">
+						
+							<p>
+							
+							{{donnee.username}}
+							
+							</p>
+																				
+						</div>
+				</div>	
+				
+			</div>
+	
+	
+	
+<script src="style/js/angular.min.js"></script>
+	<script src="style/js/JSapp.js"></script>	
 </body>
 
 </html>
