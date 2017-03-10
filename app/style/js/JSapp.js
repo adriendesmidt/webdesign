@@ -1,6 +1,8 @@
 var varModule = angular.module('MyModule',[]);
 
 varModule.controller('controleDonnees', function($scope){
+
+	
 	
 	// $scope.donnees = [
 						// {
@@ -39,3 +41,6 @@ varModule.controller('controleDonnees', function($scope){
 					
 				}
 			);
+$(document).ready(function(){
+      $('.carousel').carousel();
+    });

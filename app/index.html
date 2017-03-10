@@ -6,66 +6,79 @@
 	<link href="style/css/style.css" rel="stylesheet">
 	<link href="style/css/materialize.min.css" rel="stylesheet">
 	
-	<div class="header">
-		<div class="row"> 
-			<div class="col-lg-12"></div>
-		</div>
-	</div>
 </head>
 
 <title> Salut toi  ca va ?</title>
 
 <body ng-app="MyModule">
-	<div class="header">
-		<div class="row"> 
-			
-		</div>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo center">Votre Café au Meilleur Prix</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="left hide-on-med-and-down">
+					<li><a href="#partie1">Partie1</a></li>
+					<li><a href="#partie2">Partie2</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="#partie1">Partie1</a></li>
+					<li><a href="#partie2">Partie2</a></li>
+				</ul>
+			</div>
+		</nav>
 	</div>
+
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 card-panel brown lighten-2">Café à 1€</div>
+			<div class="col l12 card"><img src="style/css/images/café.jpg" alt="Cafe" width="100%" height="auto"></div>
 		</div>
+		
 		<div class="row">
-			<div class="col-lg-2 Menu card-panel brown darken-2 white-text">Menu</div>
-			<div class="col-lg-10 Donnees card-panel brown lighten-4">Donnees
+			<div class="col l12 Donnees card-panel brown lighten-4">Donnees
 
 				<div class="row">
 					<div class="col l4 card-panel Donnees brown lighten-4">
 						<label>Coche moi: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
 
-								<div ng-if="checked" >
-									<div ng-controller="controleDonnees" >
+						<div ng-if="checked" >
+							<div ng-controller="controleDonnees" >
 								
-											<div ng-repeat="donnee in donnees">
-											
-												<p>
-												
-												{{donnee.fields.tel}}
-												
-												</p>
-																									
-											</div>
-									</div>	
-									
+								<div ng-repeat="donnee in donnees">
+
+									<p>
+
+										{{donnee.fields.tel}}
+
+									</p>
+
 								</div>
+							</div>	
+
+						</div>
 					</div>
 					<div class="card-panel col l5 offset-l3 deep-orange lighten-2 Donnees">
-					<span class="blue-text text-darken-2">Au top mamene</span>
+						<span class="blue-text text-darken-2">Au top mamene</span>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
 
-	
 
-	
-	
-	
-	
+
+
+
+
 	<script src="style/js/angular.min.js"></script>
-	<script src="style/js/JSapp.js"></script>	
+	<script src="style/js/JSapp.js"></script>
+	<script src="style/js/jquery-3.1.1.min.js"></script>
+	<script src="style/js/materialize.js"></script>
+	<script type="text/javascript">$(document).ready(function(){
+		$('.carousel').carousel();
+	});</script>
+
 </body>
 
 </html>

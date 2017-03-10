@@ -1,6 +1,6 @@
 body {
   	background-color:white;
-	background-image:url(images/arriere_plan_café.jpg);
+
 }
 [class*="col-"], footer {
   
@@ -10,7 +10,7 @@ body {
 }
 
 .container{
-	padding-top: 100px;
+	
 }
 
 .Donnees{
