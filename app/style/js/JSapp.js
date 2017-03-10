@@ -35,7 +35,18 @@ varModule.controller('controleDonnees', function($scope, $http){
 					
 					$http.get('style/js/liste-des-cafes-a-un-euro.json').then(function(response){
 					$scope.donnees = response.data;
+					console.log("testa");
+					/* for (i=0; i<$scope.donnees.length;i++){
+						console.log("test"+i);
+						$("noms").append("<div> id='nom"+i+"' class='col s12'>"+$scope.donnees[i].fields.nom_du_cafe+"</div>");
+						$("adresses").append("<div> id='adresse"+i+"' class='col s12'>"+$scope.donnees[i].fields.adresse+"</div>");
+					} */
+
+					
 		});	
 					
 				}
 			);
+
+			
+			

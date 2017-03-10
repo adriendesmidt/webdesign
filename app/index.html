@@ -41,19 +41,17 @@
 		</div>
 		
 		<div class="row">
-			<div class="col l12 Donnees card-panel brown lighten-4">Donnees
+			<div class="col l12 Donnees card-panel brown lighten-4">
 
 				<div class="row">
-					<div class="col l4 card-panel Donnees brown lighten-4">
-						<ul id="menu-deroulant">
-							
-						<label>Clique ici: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
+					<div class="col l3 card-panel Donnees brown lighten-4">
+						
+					
+ 
+						<label>Click here to see name: <input type="checkbox" ng-model="checked" ng-init="checked=false" /></label><br/>
+						<div ng-if="checked">		
 								
-						<div ng-if="checked" >
-						
-						
-						
-							<div ng-controller="controleDonnees" >
+							<div  ng-controller="controleDonnees" >
 								
 															
 								<li ng-repeat="donnee in donnees " >
@@ -63,12 +61,65 @@
 								</li>
 								
 							</div>	
-
 						</div>
+
+<!-- div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#noms">Voir les noms</a></li>
+        <li class="tab col s3"><a class="active" href="#adresses">Voir les adresses</a></li>
+      </ul>
+    </div>
+	<div id = "noms" >
+	</div>
+	<div id = "adresses" >
+	</div>
+  </div>							
+ -->
+						
+						
+						 
+						
 					</div>
-					<div class="card-panel col l5 offset-l3 deep-orange lighten-2 Donnees">			
-						<span class="blue-text text-darken-2">Au top mamene</span>
-					</div>
+					<div class="col l3 card-panel Donnees brown lighten-4">
+						
+					
+ 
+						<label>Click here to see address: <input type="checkbox" ng-model="checked1" ng-init="checked1=false" /></label><br/>
+						<div ng-if="checked1">		
+								
+							<div  ng-controller="controleDonnees" >
+								
+															
+								<li ng-repeat="donnee in donnees " >
+																	
+										{{donnee.fields.adresse}}
+																	
+								</li>
+								
+							</div>	
+						</div>
+					
+				</div>
+				<div class="col 13 card-panel Donnees brown lighten-4">
+						
+					
+ 
+						<label>Click here to see district: <input type="checkbox" ng-model="checked2" ng-init="checked2=false" /></label><br/>
+						<div ng-if="checked2">		
+								
+							<div  ng-controller="controleDonnees" >
+								
+															
+								<li ng-repeat="donnee in donnees " >
+																	
+										{{donnee.fields.arrondissement}}
+																	
+								</li>
+								
+							</div>	
+						</div>
+					
 				</div>
 
 			</div>
@@ -81,6 +132,10 @@
 	<script src="style/js/jquery-3.1.1.min.js"></script>
 	<script src="style/js/materialize.js"></script>
     <script src="style/js/JSapp.js"></script>
+	<script>  $(document).ready(function(){
+    $('ul.tabs').tabs('select_tab', 'tab_id');
+  });
+  </script>
 
 
 </body>
