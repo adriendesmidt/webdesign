@@ -1,11 +1,7 @@
 var varModule = angular.module('MyModule',[]);
 
-varModule.controller('controleDonnees', function($scope){
 
-	
-=======
 varModule.controller('controleDonnees', function($scope, $http){
->>>>>>> Stashed changes
 	
 	// $scope.donnees = [
 						// {
@@ -37,13 +33,11 @@ varModule.controller('controleDonnees', function($scope, $http){
 					
 					// ];
 					
-					$http.get('liste-des-cafes-a-un-euro.json').then(function(response){
-			$scope.donnees = response.data.records;
+					$http.get('style/js/liste-des-cafes-a-un-euro.json').then(function(response){
+						console.log(response.data);
+			$scope.donnees = response.data;
 			
 		});	
 					
 				}
 			);
-$(document).ready(function(){
-      $('.carousel').carousel();
-    });
