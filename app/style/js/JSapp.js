@@ -3,6 +3,9 @@ var varModule = angular.module('MyModule',[]);
 varModule.controller('controleDonnees', function($scope){
 
 	
+=======
+varModule.controller('controleDonnees', function($scope, $http){
+>>>>>>> Stashed changes
 	
 	// $scope.donnees = [
 						// {
@@ -34,7 +37,7 @@ varModule.controller('controleDonnees', function($scope){
 					
 					// ];
 					
-					$http.get('parcs-de-stationnement-concedes-de-la-ville-de-paris.json').then(function(response){
+					$http.get('liste-des-cafes-a-un-euro.json').then(function(response){
 			$scope.donnees = response.data.records;
 			
 		});	
