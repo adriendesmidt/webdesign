@@ -34,9 +34,7 @@ varModule.controller('controleDonnees', function($scope, $http){
 					// ];
 					
 					$http.get('style/js/liste-des-cafes-a-un-euro.json').then(function(response){
-						console.log(response.data);
-			$scope.donnees = response.data;
-			
+					$scope.donnees = response.data;
 		});	
 					
 				}
