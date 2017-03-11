@@ -22,14 +22,14 @@
 			<div class="nav-wrapper">
 				<a href="#!" class="brand-logo center">Votre Café au Meilleur Prix</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="left hide-on-med-and-down">
+				<!-- <ul class="left hide-on-med-and-down">
 					<li><a href="#partie1">Partie1</a></li>
 					<li><a href="#partie2">Partie2</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
 					<li><a href="#partie1">Partie1</a></li>
 					<li><a href="#partie2">Partie2</a></li>
-				</ul>
+				</ul> -->
 			</div>
 		</nav>
 	</div>
@@ -39,42 +39,37 @@
 		<div class="row">
 			<div class="col l12 card"><img src="style/css/images/café.jpg" alt="Cafe" width="100%" height="auto"></div>
 		</div>
+		<div class="row">
 		
+		
+<!-- 		<label ng-class="change-css: brown">Click here to change color font<input type="checkbox" ng-model="brown" ng-init="checked=false" /></label><br/>-->
+ 		<input ng-model="font"
+       placeholder="Type: 'red-f', 'blue-f' or 'brown-f' to change color" aria-label="Type: 'red-f', 'blue-f' or 'brown-f' to change color"
+	</div>
 		<div class="row">
 			<div class="col l12 Donnees card-panel brown lighten-4">
-
-				<div class="row">
+				<span> type there to filter by name, adress or district </span>
+				<div class="row" ng-class="font" >
+				
 					<div class="col l3 card-panel Donnees brown lighten-4">
 						
 					
- 
-						<label>Click here to see name: <input type="checkbox" ng-model="checked" ng-init="checked=false" /></label><br/>
+ <input type="text" ng-model="name" />
+						<label ng-class="font">Click here to see name: <input type="checkbox" ng-model="checked" ng-init="checked=false" /></label><br/>
 						<div ng-if="checked">		
 								
-							<div  ng-controller="controleDonnees" >
+							<div  ng-controller="controleDonnees"  > <!-- ng-class="{red: red-font, blue: blue-font, brown: brown-font} -->
 								
 															
-								<li ng-repeat="donnee in donnees " >
+								<p ng-repeat="donnee in donnees | filter: name"  >
 																	
 										{{donnee.fields.nom_du_cafe}}
 																	
-								</li>
+								</p>
 								
 							</div>	
 						</div>
-
-< div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a href="#noms">Voir les noms</a></li>
-        <li class="tab col s3"><a class="active" href="#adresses">Voir les adresses</a></li>
-      </ul>
-    </div>
-	<div id = "noms" >
-	</div>
-	<div id = "adresses" >
-	</div>
-  </div>							
+	
  
 						
 						
@@ -83,39 +78,41 @@
 					</div>
 					<div class="col l3 card-panel Donnees brown lighten-4">
 						
-					
+					<input type="text" ng-model="address" />
  
-						<label>Click here to see address: <input type="checkbox" ng-model="checked1" ng-init="checked1=false" /></label><br/>
+						<label ng-class="font">Click here to see address: <input type="checkbox" ng-model="checked1" ng-init="checked1=false" /></label><br/>
 						<div ng-if="checked1">		
 								
 							<div  ng-controller="controleDonnees" >
 								
 															
-								<li ng-repeat="donnee in donnees " >
+								<p ng-repeat="donnee in donnees| filter: address" >
 																	
 										{{donnee.fields.adresse}}
 																	
-								</li>
+								</p>
 								
 							</div>	
 						</div>
 					
 				</div>
 				<div class="col 13 card-panel Donnees brown lighten-4">
-						
 					
- 
-						<label>Click here to see district: <input type="checkbox" ng-model="checked2" ng-init="checked2=false" /></label><br/>
+					
+					<input type="text" ng-model="district" />	
+					
+						
+						<label ng-class="font">Click here to see district: <input type="checkbox" ng-model="checked2" ng-init="checked2=false" /></label><br/>
 						<div ng-if="checked2">		
 								
 							<div  ng-controller="controleDonnees" >
 								
 															
-								<li ng-repeat="donnee in donnees " >
+								<p ng-repeat="donnee in donnees | filter: district " >
 																	
-										{{donnee.fields.arrondissement}}
+										{{donnee.fields.arrondissement }}
 																	
-								</li>
+								</p>
 								
 							</div>	
 						</div>
@@ -126,7 +123,27 @@
 		</div>
 
 	</div>
-
+ 
+ 
+ 
+ <center>
+ <iframe src="https://opendata.paris.fr/explore/embed/dataset/liste-des-cafes-a-un-euro/map/?location=12,48.85952,2.36086&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6Imxpc3RlLWRlcy1jYWZlcy1hLXVuLWV1cm8iLCJvcHRpb25zIjp7fX0sImNoYXJ0cyI6W3sidHlwZSI6ImxpbmUiLCJmdW5jIjoiQVZHIiwieUF4aXMiOiJhcnJvbmRpc3NlbWVudCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiM2NmMyYTUifV0sInhBeGlzIjoiZGF0ZSIsIm1heHBvaW50cyI6IiIsInRpbWVzY2FsZSI6InllYXIiLCJzb3J0IjoiIn1dfQ%3D%3D&static=false&datasetcard=false" width="800" height="600" frameborder="0"></iframe>
+ </center>
+ 
+ <center>
+ </br></br>
+ 
+	<div class="row">
+	click here if you like this article
+	<a class="waves-effect waves-light btn" ng-click="like = like +1" ng-init="like =0">I like this !</a>
+	<span>
+  number of like : {{like}}
+</span>
+	</div>
+</center>	
+	
+	
+	
 
 	<script src="style/js/angular.min.js"></script>
 	<script src="style/js/jquery-3.1.1.min.js"></script>
